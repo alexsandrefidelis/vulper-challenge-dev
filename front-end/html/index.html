@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" ng-app="MyApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,11 +13,6 @@
 	
 	<!--Serviços-->
 	<script src="../js/services/dadosAPI.js"></script>
-	<script src="../js/services/empresaAPI.js"></script>
-	
-	<!--Controllers-->
-	<script src="../js/controllers/dadosController.js"></script>
-    <script src="../js/controllers/empresaController.js"></script>
 </head>
 <body>
     <form method="POST" action="" id="fCadastro" >
@@ -32,18 +27,17 @@
 
     <hr/>
 
-    <div ng-controller="empresaController">
-        <button type="button" class="btn btn-default" ng-click="listar()">Atualizar Empresa</button>
+    <div ng-controller="userCtrl">
         <table class="table">
             <tr>
-                <th>Nome</th>
-                <th>Descrição</th>
-                <th>Valor</th>
+                <th>Razão Social</th>
+                <th>Telefone</th>
+                <th>Classificação</th>
             </tr>
             <tr ng-repeat="empresa in empresas">
-                <td>{{empresa.nome}}</td>
-                <td>{{empresa.descricao}}</td>
-                <td>{{empresa.valor}}</td>
+                <td>{{empresa.razao_social}}</td>
+                <td>{{empresa.telefone}}</td>
+                <td>{{empresa.classificacao}}</td>
             </tr>
         </table>
     </div>
