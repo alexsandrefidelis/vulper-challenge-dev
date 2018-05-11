@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="MyApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Projeto</title>
+    <link rel="stylesheet" href="..\css\form.css">
+    <script lang="javascript" src="..\js\funcoes.js"></script>
+    <!-- Angularjs-->
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../js/app.js"></script>
+	
+	<!--Serviços-->
+	<script src="../js/services/dadosAPI.js"></script>
+</head>
+<body>
+    <form method="POST" action="" id="fCadastro" >
+    <div id="Cadastro"><h1>Projeto Impulsionamento de carreira</h1>
+        <h2><b>Cadastro de empresas:</b></h2><hr>
+        <p><label id="nome"><b>Razão Social: <input type="text" name="nome"></label></b></p><hr>
+        <p><label id:"telefone"><b>Telefone:<input type="number" name="telefone"></label></b></p><hr>
+        <p><label id="numero_de_devs"><b>Quantidade de Devs:<input type="number" name="numero_de_devs"></label></b></p><hr>
+        <input type="submit" value="Cadastrar" id="Cadastrar">
+    </div>
+    </form>
+
+    <hr/>
+
+    <div ng-controller="userCtrl">
+        <table class="table">
+            <tr>
+                <th>Razão Social</th>
+                <th>Telefone</th>
+                <th>Classificação</th>
+            </tr>
+            <tr ng-repeat="empresa in empresas">
+                <td>{{empresa.razao_social}}</td>
+                <td>{{empresa.telefone}}</td>
+                <td>{{empresa.classificacao}}</td>
+            </tr>
+        </table>
+    </div>
+    <!--
+    <form action="" method="POST" id="fprocurar">
+    <div id="Procurar"><h1>Procurar Empresa:</h1>
+        <p><label id:"proc_empresas"><b> Digite o nome da empresa que você quer procurar:   </b><input type="search" name="proc_empresas"></label>
+        <input type="button" value="Procurar" id="proc_empresas"></p>
+        
+    </div>
+    </form>
+-->
+</body>
+</html>
