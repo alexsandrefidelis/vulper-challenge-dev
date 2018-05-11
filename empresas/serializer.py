@@ -1,20 +1,26 @@
 from rest_framework.serializers import ModelSerializer, SerializerMethodField
 from .models import Empresa
+from rest_framework import serializers
 
 class EmpresaSerializer(ModelSerializer):
-
-	#teste = SerializerMethodField()
 
 	class Meta:
 		model = Empresa
 		fields = ['razao_social', 'telefone', 'quantidade_de_devs']
 
 
-	def get_test(self):
-		teste = None
+class EmpresaListSerializer(ModelSerializer):
 
-		if self.quantidade_de_devs < 10:
-			teste = "Vollmir" 
+	class Meta:
+		model = Empresa
+		fields = ['razao_social', 'telefone', 'quantidade_de_devs']
+
+
+	def get_classificacao(self):
+		classificacao = None
+
+		if quantidade_de_devs < 10:
+			classificacao = "Vollmir" 
 		else:
-			teste = "Asgard"
-		return teste
+			classificacao = "Asgard"
+		return classificacao

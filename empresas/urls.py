@@ -19,4 +19,5 @@ from empresas import views
 
 urlpatterns = [
 	url(r'', views.EmpresaListView.as_view(), name='empresa-list'),
+	url(r'post', views.EmpresaSendView.as_view(), name='empresa-list'),
 ]
