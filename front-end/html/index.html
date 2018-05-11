@@ -10,6 +10,14 @@
     <!-- Angularjs-->
     <script src="../bower_components/angular/angular.min.js"></script>
     <script src="../js/app.js"></script>
+	
+	<!--Serviços-->
+	<script src="../js/services/dadosAPI.js"></script>
+	<script src="../js/services/empresaAPI.js"></script>
+	
+	<!--Controllers-->
+	<script src="../js/controllers/dadosController.js"></script>
+    <script src="../js/controllers/empresaController.js"></script>
 </head>
 <body>
     <form method="POST" action="" id="fCadastro" >
@@ -21,8 +29,25 @@
         <input type="submit" value="Cadastrar" id="Cadastrar">
     </div>
     </form>
-</body>
-<body>
+
+    <hr/>
+
+    <div ng-controller="empresaController">
+        <button type="button" class="btn btn-default" ng-click="listar()">Atualizar Empresa</button>
+        <table class="table">
+            <tr>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Valor</th>
+            </tr>
+            <tr ng-repeat="empresa in empresas">
+                <td>{{empresa.nome}}</td>
+                <td>{{empresa.descricao}}</td>
+                <td>{{empresa.valor}}</td>
+            </tr>
+        </table>
+    </div>
+    <!--
     <form action="" method="POST" id="fprocurar">
     <div id="Procurar"><h1>Procurar Empresa:</h1>
         <p><label id:"proc_empresas"><b> Digite o nome da empresa que você quer procurar:   </b><input type="search" name="proc_empresas"></label>
@@ -30,5 +55,6 @@
         
     </div>
     </form>
+-->
 </body>
 </html>
